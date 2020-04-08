@@ -1,0 +1,10 @@
+$PBExportHeader$p_ws_proxy.srj
+$PBExportComments$Generated Web Service Proxy Project
+GeneratorID:{1B1DCEE2-E514-11D1-B30A-006008925BD4}GENBC00000000
+WSDLLOCATION:file://C:\Сбер\RouteReferencesService.wsdl
+COMPONENT:1	RouteReferencesFacadeService::RouteReferencesService::sberRouteReferencesService
+PACKAGE:13	tns2__CustomServiceResult	tns1__AgreementOperationDTO	tns1__AgreementOperationsDTO	tns1__AsyncServiceResult	tns1__BooleanServiceResult	tns1__ClientTypeDTO	tns1__ClientTypesDTO	tns1__CsvDTO	tns1__ExceptionalBusinessDayDTO	tns1__OperationRequest	tns1__RouteDTO	tns1__ServiceResult	tns1__ServiceScheduleDTO
+COMMENT:Web Service Proxy Generator
+DEPLOYMENT:C:\Users\Vovan\Desktop\Работа\test.pbl	0	0
+PROJECT:p_ws_proxy
+PREFIX:sber

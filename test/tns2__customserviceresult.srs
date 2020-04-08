@@ -1,0 +1,6 @@
+$PBExportHeader$tns2__customserviceresult.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns2__CustomServiceResult from structure
+   tns1__ServiceResult serviceResult
+end type
+

@@ -1,0 +1,10 @@
+$PBExportHeader$tns1__routedto.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__RouteDTO from structure
+   tns1__ServiceResult serviceResult
+   longlong id
+   string number
+   string spcCode
+   string startTime
+end type
+

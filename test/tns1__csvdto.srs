@@ -1,0 +1,7 @@
+$PBExportHeader$tns1__csvdto.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__CsvDTO from structure
+   string csvData
+   tns1__ServiceResult serviceResult
+end type
+

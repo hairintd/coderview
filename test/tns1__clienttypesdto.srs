@@ -1,0 +1,7 @@
+$PBExportHeader$tns1__clienttypesdto.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__ClientTypesDTO from structure
+   tns1__ServiceResult serviceResult
+   tns1__ClientTypeDTO  clientTypeDTOS[ ]
+end type
+

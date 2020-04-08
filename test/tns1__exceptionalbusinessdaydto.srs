@@ -1,0 +1,10 @@
+$PBExportHeader$tns1__exceptionalbusinessdaydto.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__ExceptionalBusinessDayDTO from structure
+   tns1__ServiceResult serviceResult
+   string dayDate
+   longlong id
+   string spcCode
+   string substituteDayName
+end type
+

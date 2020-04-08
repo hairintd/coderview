@@ -1,0 +1,7 @@
+$PBExportHeader$tns1__booleanserviceresult.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__BooleanServiceResult from structure
+   tns1__ServiceResult serviceResult
+   boolean value
+end type
+

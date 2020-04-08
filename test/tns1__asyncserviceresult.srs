@@ -1,0 +1,15 @@
+$PBExportHeader$tns1__asyncserviceresult.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__AsyncServiceResult from structure
+   string errorCode
+   string errorMessage
+   string exceptionStackTrace
+   boolean hasInfo
+   string infoCode
+   string infoMessage
+   longlong resultID
+   boolean success
+   tns1__OperationRequest  operationRequests[ ]
+   string singleRequestId
+end type
+

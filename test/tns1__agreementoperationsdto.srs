@@ -1,0 +1,7 @@
+$PBExportHeader$tns1__agreementoperationsdto.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__AgreementOperationsDTO from structure
+   tns1__ServiceResult serviceResult
+   tns1__AgreementOperationDTO  agreementOperationDTOS[ ]
+end type
+

@@ -1,0 +1,63 @@
+$PBExportHeader$sberroutereferencesservice.srx
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type sberRouteReferencesService from NonVisualObject
+end type
+
+type variables
+Protected:
+   string xmlns = ""
+   string tns2 = "http://dto.storage.gamma.sbrf.ru"
+   string soapenc = "http://schemas.xmlsoap.org/soap/encoding/"
+   string wsdl = "http://schemas.xmlsoap.org/wsdl/"
+   string wsdlsoap = "http://schemas.xmlsoap.org/wsdl/soap/"
+   string xsd = "http://www.w3.org/2001/XMLSchema"
+   string apachesoap = "http://xml.apache.org/xml-soap"
+   string intf = "ru.sbrf.ascc.facade.route"
+   string tns1 = "ru.sbrf.gamma.storage.dto"
+   string pb__TargetNamespace = "ru.sbrf.ascc.facade.route"
+   string BindingStyle = "rpc"
+
+   string endpoint = "http://localhost:9082/GBK_WSAdapters/services/RouteReferencesService"
+   string __tns2__CustomServiceResult = "CustomServiceResult(tns1:ServiceResult serviceResult)@tns2"
+   tns2__CustomServiceResult i__tns2__CustomServiceResult
+   string __tns1__AgreementOperationDTO = "AgreementOperationDTO(tns1:ServiceResult serviceResult,xsd:string displayableName,xsd:string operationCode)@tns1"
+   tns1__AgreementOperationDTO i__tns1__AgreementOperationDTO
+   string __tns1__AgreementOperationsDTO = "AgreementOperationsDTO(tns1:ServiceResult serviceResult,tns1:AgreementOperationDTO[SoapElementName] agreementOperationDTOS)@tns1"
+   tns1__AgreementOperationsDTO i__tns1__AgreementOperationsDTO
+   string __tns1__AsyncServiceResult = "AsyncServiceResult(xsd:string errorCode,xsd:string errorMessage,xsd:string exceptionStackTrace,xsd:boolean hasInfo,xsd:string infoCode,xsd:string infoMessage,xsd:long resultID,xsd:boolean success,tns1:OperationRequest[SoapElementName] operationRequests,xsd:string singleRequestId)@tns1"
+   tns1__AsyncServiceResult i__tns1__AsyncServiceResult
+   string __tns1__BooleanServiceResult = "BooleanServiceResult(tns1:ServiceResult serviceResult,xsd:boolean value)@tns1"
+   tns1__BooleanServiceResult i__tns1__BooleanServiceResult
+   string __tns1__ClientTypeDTO = "ClientTypeDTO(tns1:ServiceResult serviceResult,xsd:string displayableName,xsd:long id)@tns1"
+   tns1__ClientTypeDTO i__tns1__ClientTypeDTO
+   string __tns1__ClientTypesDTO = "ClientTypesDTO(tns1:ServiceResult serviceResult,tns1:ClientTypeDTO[SoapElementName] clientTypeDTOS)@tns1"
+   tns1__ClientTypesDTO i__tns1__ClientTypesDTO
+   string __tns1__CsvDTO = "CsvDTO(xsd:string csvData,tns1:ServiceResult serviceResult)@tns1"
+   tns1__CsvDTO i__tns1__CsvDTO
+   string __tns1__ExceptionalBusinessDayDTO = "ExceptionalBusinessDayDTO(tns1:ServiceResult serviceResult,xsd:string dayDate,xsd:long id,xsd:string spcCode,xsd:string substituteDayName)@tns1"
+   tns1__ExceptionalBusinessDayDTO i__tns1__ExceptionalBusinessDayDTO
+   string __tns1__OperationRequest = "OperationRequest(xsd:string operation,xsd:string requestId)@tns1"
+   tns1__OperationRequest i__tns1__OperationRequest
+   string __tns1__RouteDTO = "RouteDTO(tns1:ServiceResult serviceResult,xsd:long id,xsd:string number,xsd:string spcCode,xsd:string startTime)@tns1"
+   tns1__RouteDTO i__tns1__RouteDTO
+   string __tns1__ServiceResult = "ServiceResult(xsd:string errorCode,xsd:string errorMessage,xsd:string exceptionStackTrace,xsd:boolean hasInfo,xsd:string infoCode,xsd:string infoMessage,xsd:long resultID,xsd:boolean success)@tns1"
+   tns1__ServiceResult i__tns1__ServiceResult
+   string __tns1__ServiceScheduleDTO = "ServiceScheduleDTO(tns1:ServiceResult serviceResult,xsd:boolean active,xsd:string agreementOperationCode,xsd:string clientCode,xsd:string dayOfWeekDisplayableName,xsd:string dayOfWeekName,xsd:long id,xsd:int order,xsd:string route,xsd:string spcCode,xsd:string startTime)@tns1"
+   tns1__ServiceScheduleDTO i__tns1__ServiceScheduleDTO
+end variables
+
+forward prototypes
+public:
+function tns1__ServiceResult deleteExceptionalBusinessDay (longlong in0) alias for "deleteExceptionalBusinessDay([in] xsd:long in0) return tns1:ServiceResult deleteExceptionalBusinessDayReturn@ru.sbrf.ascc.facade.route"
+function tns1__BooleanServiceResult isSchedulesButtonActive (string in0) alias for "isSchedulesButtonActive([in] xsd:string in0) return tns1:BooleanServiceResult isSchedulesButtonActiveReturn@ru.sbrf.ascc.facade.route"
+function tns1__AgreementOperationsDTO loadAgreementOperationsForExternalClient (string in0) alias for "loadAgreementOperationsForExternalClient([in] xsd:string in0) return tns1:AgreementOperationsDTO loadAgreementOperationsForExternalClientReturn@ru.sbrf.ascc.facade.route"
+function tns1__CsvDTO loadAllExceptionalBusinessDaysBySpcCode (string in0) alias for "loadAllExceptionalBusinessDaysBySpcCode([in] xsd:string in0) return tns1:CsvDTO loadAllExceptionalBusinessDaysBySpcCodeReturn@ru.sbrf.ascc.facade.route"
+function tns1__CsvDTO loadAllRoutesBySpcCode (string in0) alias for "loadAllRoutesBySpcCode([in] xsd:string in0) return tns1:CsvDTO loadAllRoutesBySpcCodeReturn@ru.sbrf.ascc.facade.route"
+function tns1__ClientTypesDTO loadExternalClientTypes () alias for "loadExternalClientTypes() return tns1:ClientTypesDTO loadExternalClientTypesReturn@ru.sbrf.ascc.facade.route"
+function tns1__ClientTypesDTO loadInternalClientTypes () alias for "loadInternalClientTypes() return tns1:ClientTypesDTO loadInternalClientTypesReturn@ru.sbrf.ascc.facade.route"
+function tns1__CsvDTO loadSchedulesByExternalClientAndAgreementOperation (string in0, string in1, string in2) alias for "loadSchedulesByExternalClientAndAgreementOperation([in] xsd:string in0, [in] xsd:string in1, [in] xsd:string in2) return tns1:CsvDTO loadSchedulesByExternalClientAndAgreementOperationReturn@ru.sbrf.ascc.facade.route"
+function tns1__CsvDTO loadServiceSchedulesByInternalClient (string in0, string in1) alias for "loadServiceSchedulesByInternalClient([in] xsd:string in0, [in] xsd:string in1) return tns1:CsvDTO loadServiceSchedulesByInternalClientReturn@ru.sbrf.ascc.facade.route"
+function tns1__ServiceResult saveOrUpdateExceptionalBusinessDay (tns1__ExceptionalBusinessDayDTO in0) alias for "saveOrUpdateExceptionalBusinessDay([in] tns1:ExceptionalBusinessDayDTO in0) return tns1:ServiceResult saveOrUpdateExceptionalBusinessDayReturn@ru.sbrf.ascc.facade.route"
+function tns1__ServiceResult saveOrUpdateRoute (tns1__RouteDTO in0) alias for "saveOrUpdateRoute([in] tns1:RouteDTO in0) return tns1:ServiceResult saveOrUpdateRouteReturn@ru.sbrf.ascc.facade.route"
+function tns1__ServiceResult saveOrUpdateServiceSchedule (tns1__ServiceScheduleDTO in0) alias for "saveOrUpdateServiceSchedule([in] tns1:ServiceScheduleDTO in0) return tns1:ServiceResult saveOrUpdateServiceScheduleReturn@ru.sbrf.ascc.facade.route"
+end prototypes

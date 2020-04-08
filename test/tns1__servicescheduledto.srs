@@ -1,0 +1,16 @@
+$PBExportHeader$tns1__servicescheduledto.srs
+$PBExportComments$Proxy imported from Web Service via Web Service Proxy generator.
+global type tns1__ServiceScheduleDTO from structure
+   tns1__ServiceResult serviceResult
+   boolean active
+   string agreementOperationCode
+   string clientCode
+   string dayOfWeekDisplayableName
+   string dayOfWeekName
+   longlong id
+   long order
+   string route
+   string spcCode
+   string startTime
+end type
+
