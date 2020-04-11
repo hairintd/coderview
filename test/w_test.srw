@@ -1,4 +1,4 @@
-$PBExportHeader$w_test.srw
+п»ї$PBExportHeader$w_test.srw
 forward
 global type w_test from window
 end type
@@ -20,7 +20,7 @@ global type w_test from window
 integer width = 3959
 integer height = 1648
 boolean titlebar = true
-string title = "Тестовая работа"
+string title = "РўРµСЃС‚РѕРІР°СЏ СЂР°Р±РѕС‚Р°"
 boolean controlmenu = true
 boolean minbox = true
 boolean maxbox = true
@@ -54,9 +54,9 @@ public function integer f_deleterow (integer row)
 end prototypes
 
 public function integer f_save (long row);string ls_res
-// Коды возврата 0 - успешно,
-// -1 -ошибка вызова сервиса, требует доп обработки, но не в тест задании
-// 1 - не успех, ошибка возвращаемая сервисом
+// РљРѕРґС‹ РІРѕР·РІСЂР°С‚Р° 0 - СѓСЃРїРµС€РЅРѕ,
+// -1 -РѕС€РёР±РєР° РІС‹Р·РѕРІР° СЃРµСЂРІРёСЃР°, С‚СЂРµР±СѓРµС‚ РґРѕРї РѕР±СЂР°Р±РѕС‚РєРё, РЅРѕ РЅРµ РІ С‚РµСЃС‚ Р·Р°РґР°РЅРёРё
+// 1 - РЅРµ СѓСЃРїРµС…, РѕС€РёР±РєР° РІРѕР·РІСЂР°С‰Р°РµРјР°СЏ СЃРµСЂРІРёСЃРѕРј
 if dw_ex.Getitemstatus(row, 0, Primary!) = NotModified! then return 0;
 
 p_except.id = dw_ex.Getitemnumber(row, 'id')
@@ -64,7 +64,7 @@ p_except.spcCode = dw_ex.GetitemString(row, 'spcCode')
 p_except.daydate = string(dw_ex.GetitemDate(row, 'daydate'), 'dd.mm.yyyy')
 p_except.substituteDayName = upper(string(today(),'dddd'))
 
-// Дёргаю сервис
+// Р”С‘СЂРіР°СЋ СЃРµСЂРІРёСЃ
 Setpointer(HourGlass!)
 try
 	p_result = n_serv.saveOrUpdateExceptionalBusinessDay(p_except);
@@ -72,15 +72,15 @@ catch (SoaPException e1)
 	ls_res = e1.Getmessage();
 	if len (ls_res)  = 0 then ls_res = e1.GetdetailMessage();
 	Setpointer(Arrow!)
-	MessageBox('Ошибка!', ls_res)
+	MessageBox('РћС€РёР±РєР°!', ls_res)
 	return -1;
 end try
 Setpointer(Arrow!)
-// Обрабатываю результат
+// РћР±СЂР°Р±Р°С‚С‹РІР°СЋ СЂРµР·СѓР»СЊС‚Р°С‚
 if p_result.success then
 	dw_ex.Setitem(row, 'id', p_result.resultID)
 else
-		MessageBox('Ошибка!', p_result.errorMessage)
+		MessageBox('РћС€РёР±РєР°!', p_result.errorMessage)
 		return 1;
 end if	
 return 0;
@@ -88,28 +88,28 @@ end function
 
 public function integer f_deleterow (integer row);long ll_id
 string ls_res
-// Коды возврата 0 - успешно,
-// -1 -ошибка вызова сервиса, требует доп обработки, но не в тест задании
-// 1 - не успех, ошибка возвращаемая сервисом
+// РљРѕРґС‹ РІРѕР·РІСЂР°С‚Р° 0 - СѓСЃРїРµС€РЅРѕ,
+// -1 -РѕС€РёР±РєР° РІС‹Р·РѕРІР° СЃРµСЂРІРёСЃР°, С‚СЂРµР±СѓРµС‚ РґРѕРї РѕР±СЂР°Р±РѕС‚РєРё, РЅРѕ РЅРµ РІ С‚РµСЃС‚ Р·Р°РґР°РЅРёРё
+// 1 - РЅРµ СѓСЃРїРµС…, РѕС€РёР±РєР° РІРѕР·РІСЂР°С‰Р°РµРјР°СЏ СЃРµСЂРІРёСЃРѕРј
 
 ll_id= dw_ex.Getitemnumber(row, 'id')
 Setpointer(HourGlass!)
-// Дёргаю сервис
+// Р”С‘СЂРіР°СЋ СЃРµСЂРІРёСЃ
 try
 	p_result = n_serv.deleteExceptionalBusinessDay(ll_id);
 catch (SoaPException e1)
 	ls_res = e1.Getmessage();
 	if len (ls_res)  = 0 then ls_res = e1.GetdetailMessage();
 	Setpointer(Arrow!)
-	MessageBox('Ошибка!', ls_res)
+	MessageBox('РћС€РёР±РєР°!', ls_res)
 	return -1;
 end try
 Setpointer(Arrow!)
-// Обрабатываю результат
+// РћР±СЂР°Р±Р°С‚С‹РІР°СЋ СЂРµР·СѓР»СЊС‚Р°С‚
 if p_result.success then
 	dw_ex.Setitem(row, 'id', p_result.resultID)
 else
-		MessageBox('Ошибка!', p_result.errorMessage)
+		MessageBox('РћС€РёР±РєР°!', p_result.errorMessage)
 		return 1;
 end if
 
@@ -149,7 +149,7 @@ soapconnection conn
 conn = create soapconnection
 ll_res = conn.createinstance(n_serv, is_service )
 if ll_res <> 0 then 
-	messagebox('Ошибка!', 'Работа с сервисом невозможна. Ошибка: ' + string (ll_res))
+	messagebox('РћС€РёР±РєР°!', 'Р Р°Р±РѕС‚Р° СЃ СЃРµСЂРІРёСЃРѕРј РЅРµРІРѕР·РјРѕР¶РЅР°. РћС€РёР±РєР°: ' + string (ll_res))
 	close (this)
 	destroy (test)
 end if 
@@ -229,7 +229,7 @@ integer li_res = -1
 ll_row = dw_ex.Getrow()
 if ll_row>0 and ll_row <= dw_ex.Rowcount() then li_res = f_deleterow(ll_row)
 if li_res=0 then li_res= dw_ex.DeleteRow (ll_row)
-if li_res <> 1 then MessageBox('Ошибка!', 'Ошибка работы интерфейса.')
+if li_res <> 1 then MessageBox('РћС€РёР±РєР°!', 'РћС€РёР±РєР° СЂР°Р±РѕС‚С‹ РёРЅС‚РµСЂС„РµР№СЃР°.')
 end event
 
 type cb_ins from commandbutton within w_test
@@ -298,33 +298,33 @@ if len(sle_spccode.text) = 0 then return;
 
 Setpointer(HourGlass!)
 	
-// Дёргаю сервис
+// Р”С‘СЂРіР°СЋ СЃРµСЂРІРёСЃ
 try
 	p_csvdto = n_serv.loadAllExceptionalBusinessDaysBySpcCode(sle_spccode.text);
 catch (SoaPException e2)
 	ls_res = e2.Getmessage();
 	if len (ls_res)  = 0 then 	ls_res = e2.GetdetailMessage();
-	MessageBox('Ошибка!', ls_res)
+	MessageBox('РћС€РёР±РєР°!', ls_res)
 	return
 end try
 Setpointer(Arrow!)
 
-// Обрабатываю результат. Тут сделал так, что гружу только одну строку. 
-// чтобы обработать прешедешее, мне надо посмотреть на него хотя бы в дебаггере. Исхожу из:
+// РћР±СЂР°Р±Р°С‚С‹РІР°СЋ СЂРµР·СѓР»СЊС‚Р°С‚. РўСѓС‚ СЃРґРµР»Р°Р» С‚Р°Рє, С‡С‚Рѕ РіСЂСѓР¶Сѓ С‚РѕР»СЊРєРѕ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ. 
+// С‡С‚РѕР±С‹ РѕР±СЂР°Р±РѕС‚Р°С‚СЊ РїСЂРµС€РµРґРµС€РµРµ, РјРЅРµ РЅР°РґРѕ РїРѕСЃРјРѕС‚СЂРµС‚СЊ РЅР° РЅРµРіРѕ С…РѕС‚СЏ Р±С‹ РІ РґРµР±Р°РіРіРµСЂРµ. РСЃС…РѕР¶Сѓ РёР·:
 
-//// Стуктура для передачи записей в CSV формате
+//// РЎС‚СѓРєС‚СѓСЂР° РґР»СЏ РїРµСЂРµРґР°С‡Рё Р·Р°РїРёСЃРµР№ РІ CSV С„РѕСЂРјР°С‚Рµ
 //public class CsvDTO {
-//	/** Результат выполнения метода */
+//	/** Р РµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ РјРµС‚РѕРґР° */
 //	ServiceResult serviceResult;
-//	/** Строка с записями справочника в CSV формате (разделитель запятая) */
+//	/** РЎС‚СЂРѕРєР° СЃ Р·Р°РїРёСЃСЏРјРё СЃРїСЂР°РІРѕС‡РЅРёРєР° РІ CSV С„РѕСЂРјР°С‚Рµ (СЂР°Р·РґРµР»РёС‚РµР»СЊ Р·Р°РїСЏС‚Р°СЏ) */
 //	String csvData;
 //
 
 if not p_result.success then 		
-	MessageBox('Ошибка!', p_result.errorMessage)
+	MessageBox('РћС€РёР±РєР°!', p_result.errorMessage)
 else
 	ll_res = dw_ex.Importstring(CSV!, p_csvdto.csvData, ',')
-	if ll_res<0 then Messagebox('Ошибка!', 'Ошибка импорта данных ! Код ошибки: '+ string(ll_res))
+	if ll_res<0 then Messagebox('РћС€РёР±РєР°!', 'РћС€РёР±РєР° РёРјРїРѕСЂС‚Р° РґР°РЅРЅС‹С… ! РљРѕРґ РѕС€РёР±РєРё: '+ string(ll_res))
 end if	
 
 
